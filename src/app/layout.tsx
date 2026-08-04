@@ -127,6 +127,16 @@ export default function RootLayout({
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','${siteConfig.gtmId}');`}
         </Script>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.googleAdsId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${siteConfig.googleAdsId}');`}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col">
         <noscript>

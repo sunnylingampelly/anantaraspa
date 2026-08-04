@@ -14,6 +14,7 @@ export const siteConfig = {
   locale: "en_IN",
   themeColor: "#2e5e57",
   gtmId: "GTM-T2S3NPCD",
+  googleAdsId: "AW-18366122950",
 
   contact: {
     phoneDisplay: "+91 78427 66363",
