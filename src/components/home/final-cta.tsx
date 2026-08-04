@@ -3,7 +3,8 @@ import { MapPin, Phone, Clock } from "lucide-react";
 
 import { Reveal } from "@/components/ui-custom/reveal";
 import { siteConfig } from "@/lib/site-config";
-import { telLink, whatsappLink } from "@/lib/links";
+import { whatsappLink } from "@/lib/links";
+import { CallLink } from "@/components/ui-custom/call-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export function FinalCta() {
@@ -54,13 +55,10 @@ export function FinalCta() {
               <WhatsAppIcon className="size-4" />
               Book on WhatsApp
             </a>
-            <a
-              href={telLink()}
-              className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10"
-            >
+            <CallLink className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10">
               <Phone className="size-4" strokeWidth={1.75} />
               {siteConfig.contact.phoneDisplay}
-            </a>
+            </CallLink>
           </div>
         </Reveal>
       </div>

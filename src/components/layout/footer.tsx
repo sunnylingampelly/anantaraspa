@@ -4,7 +4,8 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Logo } from "@/components/ui-custom/logo";
 import { InstagramIcon, FacebookIcon } from "@/components/ui-custom/brand-icons";
 import { siteConfig, FOOTER_LINKS } from "@/lib/site-config";
-import { telLink, mailtoLink } from "@/lib/links";
+import { mailtoLink } from "@/lib/links";
+import { CallLink } from "@/components/ui-custom/call-link";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -89,9 +90,9 @@ export function Footer() {
               </li>
               <li className="flex gap-3">
                 <Phone className="size-4 shrink-0 mt-0.5 text-sage" strokeWidth={1.5} />
-                <a href={telLink()} className="hover:text-cream">
+                <CallLink className="hover:text-cream">
                   {siteConfig.contact.phoneDisplay}
-                </a>
+                </CallLink>
               </li>
               <li className="flex gap-3">
                 <Mail className="size-4 shrink-0 mt-0.5 text-sage" strokeWidth={1.5} />

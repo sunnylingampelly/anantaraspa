@@ -5,10 +5,11 @@ import { PageHero } from "@/components/ui-custom/page-hero";
 import { Reveal } from "@/components/ui-custom/reveal";
 import { ContactForm } from "@/components/contact/contact-form";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
+import { CallLink } from "@/components/ui-custom/call-link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
-import { telLink, whatsappLink, mailtoLink } from "@/lib/links";
+import { whatsappLink, mailtoLink } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -74,9 +75,9 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <p className="font-accent text-xs uppercase tracking-[0.12em] text-muted-foreground">Phone</p>
-                    <a href={telLink()} className="mt-1 block text-foreground hover:text-primary">
+                    <CallLink className="mt-1 block text-foreground hover:text-primary">
                       {siteConfig.contact.phoneDisplay}
-                    </a>
+                    </CallLink>
                   </div>
                 </li>
                 <li className="flex gap-4">

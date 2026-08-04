@@ -27,6 +27,7 @@ import {
 import { services } from "@/content/services";
 import { blogPosts } from "@/content/blog";
 import { telLink, whatsappLink } from "@/lib/links";
+import { reportCallConversion } from "@/lib/analytics";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 type CommandMenuContextValue = {
@@ -132,7 +133,7 @@ export function CommandMenuProvider({ children }: { children: React.ReactNode })
             <CommandItem
               onSelect={() => {
                 setOpen(false);
-                window.location.href = telLink();
+                reportCallConversion(telLink());
               }}
             >
               <Phone /> Call Now

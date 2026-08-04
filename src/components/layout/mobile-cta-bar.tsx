@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { telLink, whatsappLink } from "@/lib/links";
+import { whatsappLink } from "@/lib/links";
+import { CallLink } from "@/components/ui-custom/call-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export function MobileCtaBar() {
@@ -40,13 +41,12 @@ export function MobileCtaBar() {
           style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
         >
           <div className="glass mx-3 mb-3 flex items-center gap-2 rounded-full p-2 shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
-            <a
-              href={telLink()}
+            <CallLink
               aria-label="Call Anantara Spa"
               className="flex size-12 shrink-0 items-center justify-center rounded-full bg-secondary text-primary transition-transform active:scale-90"
             >
               <Phone className="size-5" strokeWidth={1.5} />
-            </a>
+            </CallLink>
             <a
               href={whatsappLink()}
               target="_blank"

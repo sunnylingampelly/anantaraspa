@@ -8,7 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { Logo } from "@/components/ui-custom/logo";
 import { NAV_LINKS } from "@/lib/site-config";
-import { telLink, whatsappLink } from "@/lib/links";
+import { whatsappLink } from "@/lib/links";
+import { CallLink } from "@/components/ui-custom/call-link";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -87,8 +88,7 @@ export function Header() {
           >
             <Search className="size-[18px]" strokeWidth={1.5} />
           </Button>
-          <a
-            href={telLink()}
+          <CallLink
             className={cn(
               "inline-flex items-center gap-2 pl-1 pr-2 transition-colors",
               scrolled ? "text-foreground/75 hover:text-primary" : "text-cream/85 hover:text-cream"
@@ -96,7 +96,7 @@ export function Header() {
             aria-label="Call Anantara Spa"
           >
             <Phone className="size-[16px]" strokeWidth={1.5} />
-          </a>
+          </CallLink>
           <ThemeToggle
             className={cn(scrolled ? "text-foreground/70 hover:text-primary" : "text-cream/85 hover:text-cream hover:bg-cream/10")}
           />
@@ -183,12 +183,9 @@ export function Header() {
                 >
                   Book on WhatsApp
                 </a>
-                <a
-                  href={telLink()}
-                  className="inline-flex h-11 items-center justify-center rounded-full border border-border font-accent text-xs uppercase tracking-[0.14em] text-foreground"
-                >
+                <CallLink className="inline-flex h-11 items-center justify-center rounded-full border border-border font-accent text-xs uppercase tracking-[0.14em] text-foreground">
                   Call Now
-                </a>
+                </CallLink>
               </div>
             </SheetContent>
           </Sheet>

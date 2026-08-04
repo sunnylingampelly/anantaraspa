@@ -4,7 +4,8 @@ import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
 
-import { telLink, whatsappLink } from "@/lib/links";
+import { whatsappLink } from "@/lib/links";
+import { CallLink } from "@/components/ui-custom/call-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 const PARTICLES = Array.from({ length: 14 }, (_, i) => ({
@@ -122,13 +123,10 @@ export function Hero() {
             <WhatsAppIcon className="size-4" />
             Book Appointment
           </a>
-          <a
-            href={telLink()}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10"
-          >
+          <CallLink className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10">
             <Phone className="size-4" strokeWidth={1.75} />
             Call Now
-          </a>
+          </CallLink>
         </motion.div>
       </div>
 
