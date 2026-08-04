@@ -1,0 +1,73 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
+import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
+
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { siteConfig } from "@/lib/site-config";
+
+export function ContactForm() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    const lines = [
+      `Hi Anantara Spa, my name is ${name || "—"}.`,
+      phone ? `My phone number is ${phone}.` : "",
+      message || "I'd like to know more about your treatments.",
+    ].filter(Boolean);
+    const url = `https://wa.me/${siteConfig.contact.whatsappRaw}?text=${encodeURIComponent(
+      lines.join(" ")
+    )}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <div className="flex flex-col gap-2">
+        <Label htmlFor="name">Your Name</Label>
+        <Input
+          id="name"
+          required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Ananya Rao"
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <Label htmlFor="phone">Phone Number</Label>
+        <Input
+          id="phone"
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="98765 43210"
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <Label htmlFor="message">Message</Label>
+        <Textarea
+          id="message"
+          rows={4}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="I'd like to book a Deep Tissue Massage this weekend..."
+        />
+      </div>
+      <button
+        type="submit"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        <WhatsAppIcon className="size-4" />
+        Send via WhatsApp
+      </button>
+      <p className="text-center text-xs text-muted-foreground">
+        This opens WhatsApp with your message pre-filled — nothing is stored on our site.
+      </p>
+    </form>
+  );
+}
