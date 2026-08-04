@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 import { whatsappLink } from "@/lib/links";
+import { reportWhatsAppConversion } from "@/lib/analytics";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export function WhatsAppFloat() {
@@ -11,6 +12,7 @@ export function WhatsAppFloat() {
       href={whatsappLink()}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={reportWhatsAppConversion}
       aria-label="Chat with Anantara Spa on WhatsApp"
       initial={{ opacity: 0, scale: 0.6 }}
       animate={{ opacity: 1, scale: 1 }}

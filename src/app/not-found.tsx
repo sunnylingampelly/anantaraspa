@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
-import { whatsappLink } from "@/lib/links";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export default function NotFound() {
@@ -36,15 +36,10 @@ export default function NotFound() {
             Back to Home
             <ArrowRight className="size-4" strokeWidth={1.75} />
           </Link>
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10"
-          >
+          <WhatsAppLink className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10">
             <WhatsAppIcon className="size-4" />
             Book Appointment
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
     </section>

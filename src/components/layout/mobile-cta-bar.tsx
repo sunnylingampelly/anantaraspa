@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { whatsappLink } from "@/lib/links";
 import { CallLink } from "@/components/ui-custom/call-link";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export function MobileCtaBar() {
@@ -47,15 +47,10 @@ export function MobileCtaBar() {
             >
               <Phone className="size-5" strokeWidth={1.5} />
             </CallLink>
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary py-3 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-transform active:scale-95"
-            >
+            <WhatsAppLink className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary py-3 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-transform active:scale-95">
               <WhatsAppIcon className="size-4" />
               Book on WhatsApp
-            </a>
+            </WhatsAppLink>
           </div>
         </motion.div>
       )}

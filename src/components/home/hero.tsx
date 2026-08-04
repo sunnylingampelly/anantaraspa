@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ChevronDown, Phone } from "lucide-react";
 
-import { whatsappLink } from "@/lib/links";
 import { CallLink } from "@/components/ui-custom/call-link";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 const PARTICLES = Array.from({ length: 14 }, (_, i) => ({
@@ -114,15 +114,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1.05 }}
           className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
         >
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03] active:scale-95"
-          >
+          <WhatsAppLink className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03] active:scale-95">
             <WhatsAppIcon className="size-4" />
             Book Appointment
-          </a>
+          </WhatsAppLink>
           <CallLink className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10">
             <Phone className="size-4" strokeWidth={1.75} />
             Call Now

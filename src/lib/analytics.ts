@@ -33,3 +33,19 @@ export function reportCallConversion(url: string) {
     },
   });
 }
+
+const WHATSAPP_CONVERSION_LABEL = "AW-18366122950/IOBYCNzT7dscEMaX07VE";
+
+/**
+ * Google Ads "WhatsApp booking" conversion snippet. No navigation
+ * handling needed here (unlike the call conversion) since WhatsApp links
+ * open in a new tab — the current page never unloads.
+ */
+export function reportWhatsAppConversion() {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", "conversion", {
+    send_to: WHATSAPP_CONVERSION_LABEL,
+    value: 1.0,
+    currency: "INR",
+  });
+}

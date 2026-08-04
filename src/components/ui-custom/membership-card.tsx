@@ -4,7 +4,7 @@ import { Check, Crown } from "lucide-react";
 import { motion } from "framer-motion";
 
 import type { MembershipTier } from "@/content/membership";
-import { whatsappLink } from "@/lib/links";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { cn } from "@/lib/utils";
 
 export function MembershipCard({ tier }: { tier: MembershipTier }) {
@@ -61,10 +61,8 @@ export function MembershipCard({ tier }: { tier: MembershipTier }) {
         ))}
       </ul>
 
-      <a
-        href={whatsappLink(`Hi, I'd like to enrol in the ${tier.name} membership.`)}
-        target="_blank"
-        rel="noopener noreferrer"
+      <WhatsAppLink
+        message={`Hi, I'd like to enrol in the ${tier.name} membership.`}
         className={cn(
           "inline-flex items-center justify-center rounded-full py-3 font-accent text-xs uppercase tracking-[0.14em] transition-colors",
           tier.highlight
@@ -73,7 +71,7 @@ export function MembershipCard({ tier }: { tier: MembershipTier }) {
         )}
       >
         Become a Member
-      </a>
+      </WhatsAppLink>
     </motion.div>
   );
 }

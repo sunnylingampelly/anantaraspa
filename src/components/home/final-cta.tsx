@@ -3,8 +3,8 @@ import { MapPin, Phone, Clock } from "lucide-react";
 
 import { Reveal } from "@/components/ui-custom/reveal";
 import { siteConfig } from "@/lib/site-config";
-import { whatsappLink } from "@/lib/links";
 import { CallLink } from "@/components/ui-custom/call-link";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export function FinalCta() {
@@ -46,15 +46,10 @@ export function FinalCta() {
 
         <Reveal delay={0.24}>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03]"
-            >
+            <WhatsAppLink className="inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03]">
               <WhatsAppIcon className="size-4" />
               Book on WhatsApp
-            </a>
+            </WhatsAppLink>
             <CallLink className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10">
               <Phone className="size-4" strokeWidth={1.75} />
               {siteConfig.contact.phoneDisplay}

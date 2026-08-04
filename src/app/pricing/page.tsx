@@ -4,11 +4,11 @@ import { PageHero } from "@/components/ui-custom/page-hero";
 import { SectionHeading } from "@/components/ui-custom/section-heading";
 import { PricingCard } from "@/components/ui-custom/pricing-card";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { RevealGroup, RevealItem, Reveal } from "@/components/ui-custom/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
 import { signatureServices, combinationServices } from "@/content/services";
-import { whatsappLink } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Massage Pricing in Gachibowli, Hyderabad",
@@ -85,15 +85,10 @@ export default function PricingPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
-              >
+              <WhatsAppLink className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90">
                 <WhatsAppIcon className="size-4" />
                 Ask About Offers
-              </a>
+              </WhatsAppLink>
               <Link
                 href="/membership"
                 className="inline-flex items-center gap-2 rounded-full border border-primary px-7 py-3.5 font-accent text-xs uppercase tracking-[0.14em] text-primary transition-colors hover:bg-primary hover:text-primary-foreground"

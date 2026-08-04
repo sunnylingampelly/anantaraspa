@@ -9,10 +9,10 @@ import { Reveal } from "@/components/ui-custom/reveal";
 import { ServiceCard } from "@/components/ui-custom/service-card";
 import { ServiceIcon } from "@/components/ui-custom/service-icon";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 import { services, getServiceBySlug } from "@/content/services";
-import { whatsappLink } from "@/lib/links";
 
 const IMAGES = [
   "/images/gallery/gallery-01.png",
@@ -139,15 +139,13 @@ export default async function ServiceDetailPage({
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={whatsappLink(`Hi, I'd like to book the ${service.name}.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <WhatsAppLink
+                  message={`Hi, I'd like to book the ${service.name}.`}
                   className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary py-3.5 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   <WhatsAppIcon className="size-4" />
                   Book on WhatsApp
-                </a>
+                </WhatsAppLink>
               </div>
             </Reveal>
           </div>

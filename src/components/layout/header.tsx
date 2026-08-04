@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { Logo } from "@/components/ui-custom/logo";
 import { NAV_LINKS } from "@/lib/site-config";
-import { whatsappLink } from "@/lib/links";
 import { CallLink } from "@/components/ui-custom/call-link";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -100,14 +100,9 @@ export function Header() {
           <ThemeToggle
             className={cn(scrolled ? "text-foreground/70 hover:text-primary" : "text-cream/85 hover:text-cream hover:bg-cream/10")}
           />
-          <a
-            href={whatsappLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center rounded-full bg-gold px-6 font-accent text-xs uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03]"
-          >
+          <WhatsAppLink className="inline-flex h-9 items-center justify-center rounded-full bg-gold px-6 font-accent text-xs uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03]">
             Book Now
-          </a>
+          </WhatsAppLink>
         </div>
 
         <div className="flex items-center gap-0.5 lg:hidden">
@@ -175,14 +170,9 @@ export function Header() {
                 className="mt-auto flex flex-col gap-3 px-6 pt-6"
                 style={{ paddingBottom: "max(env(safe-area-inset-bottom, 0px), 1.5rem)" }}
               >
-                <a
-                  href={whatsappLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-11 items-center justify-center rounded-full bg-primary font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground"
-                >
+                <WhatsAppLink className="inline-flex h-11 items-center justify-center rounded-full bg-primary font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground">
                   Book on WhatsApp
-                </a>
+                </WhatsAppLink>
                 <CallLink className="inline-flex h-11 items-center justify-center rounded-full border border-border font-accent text-xs uppercase tracking-[0.14em] text-foreground">
                   Call Now
                 </CallLink>

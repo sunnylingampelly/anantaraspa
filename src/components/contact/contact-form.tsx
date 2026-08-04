@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { siteConfig } from "@/lib/site-config";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, reportWhatsAppConversion } from "@/lib/analytics";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -25,6 +25,7 @@ export function ContactForm() {
       lines.join(" ")
     )}`;
     trackEvent("contact_form_whatsapp_submit");
+    reportWhatsAppConversion();
     window.open(url, "_blank", "noopener,noreferrer");
   }
 

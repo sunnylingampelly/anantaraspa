@@ -3,10 +3,10 @@ import { PageHero } from "@/components/ui-custom/page-hero";
 import { FaqAccordion } from "@/components/ui-custom/faq-accordion";
 import { Reveal } from "@/components/ui-custom/reveal";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import { generalFaqs, membershipFaqs } from "@/content/faqs";
-import { whatsappLink } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "FAQs",
@@ -48,15 +48,13 @@ export default function FaqsPage() {
                 Message us on WhatsApp and our team will get back to you within
                 minutes during business hours.
               </p>
-              <a
-                href={whatsappLink("Hi, I have a question about Anantara Spa.")}
-                target="_blank"
-                rel="noopener noreferrer"
+              <WhatsAppLink
+                message="Hi, I have a question about Anantara Spa."
                 className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
               >
                 <WhatsAppIcon className="size-4" />
                 Chat on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
           </Reveal>
         </div>

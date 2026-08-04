@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui-custom/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { breadcrumbSchema, blogPostingSchema } from "@/lib/schema";
 import { blogPosts, getPostBySlug } from "@/content/blog";
-import { whatsappLink } from "@/lib/links";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
 
 export function generateStaticParams() {
@@ -129,15 +129,10 @@ export default async function BlogPostPage({
             <h2 className="font-heading text-2xl text-foreground">
               Ready to experience it for yourself?
             </h2>
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
-            >
+            <WhatsAppLink className="mt-2 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90">
               <WhatsAppIcon className="size-4" />
               Book Your Session
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
       </article>

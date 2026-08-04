@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import type { Service } from "@/content/services";
 import { ServiceIcon } from "@/components/ui-custom/service-icon";
-import { whatsappLink } from "@/lib/links";
+import { WhatsAppLink } from "@/components/ui-custom/whatsapp-link";
 import { cn } from "@/lib/utils";
 
 export function PricingCard({ service }: { service: Service }) {
@@ -49,14 +49,12 @@ export function PricingCard({ service }: { service: Service }) {
       </ul>
 
       <div className="mt-auto flex flex-col gap-2 pt-2">
-        <a
-          href={whatsappLink(`Hi, I'd like to book the ${service.name}.`)}
-          target="_blank"
-          rel="noopener noreferrer"
+        <WhatsAppLink
+          message={`Hi, I'd like to book the ${service.name}.`}
           className="inline-flex items-center justify-center rounded-full bg-primary py-3 font-accent text-xs uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Book Now
-        </a>
+        </WhatsAppLink>
         <Link
           href={`/services/${service.slug}`}
           className="inline-flex items-center justify-center py-1 text-xs text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
