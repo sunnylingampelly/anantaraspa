@@ -1,5 +1,5 @@
 // Single source of truth for business data, used across pages, metadata, and JSON-LD.
-// Contact details below are pulled from the live site (anantaraspa.co.in) and public
+// Contact details below are pulled from the live site (anantaraspa.org) and public
 // listings. Working hours are not published anywhere we could verify — the value below
 // is a placeholder and should be confirmed by the client before launch.
 
@@ -9,7 +9,7 @@ export const siteConfig = {
   tagline: "Sanctuary of Reflection",
   shortDescription:
     "A luxury day spa in Gachibowli-Raidurg, Hyderabad's IT corridor, offering Swedish, Thai, Balinese and deep-tissue massage for busy professionals.",
-  url: "https://anantaraspa.co.in",
+  url: "https://anantaraspa.org",
   ogImage: "/opengraph-image",
   locale: "en_IN",
   themeColor: "#2e5e57",

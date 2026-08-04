@@ -60,7 +60,7 @@ This is a static-first Next.js app with no environment variables or database req
 
 1. Push this repo to GitHub/GitLab/Bitbucket.
 2. Import it in [Vercel](https://vercel.com/new) — it will detect Next.js automatically.
-3. Update `siteConfig.url` in `src/lib/site-config.ts` if the production domain differs from `https://anantaraspa.co.in`.
+3. Update `siteConfig.url` in `src/lib/site-config.ts` if the production domain differs from `https://anantaraspa.org`.
 4. Deploy.
 
 ## SEO/PWA notes
