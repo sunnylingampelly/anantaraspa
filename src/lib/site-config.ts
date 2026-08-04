@@ -13,7 +13,7 @@ export const siteConfig = {
   ogImage: "/opengraph-image",
   locale: "en_IN",
   themeColor: "#2e5e57",
-  gtmId: "GTM-PSFS2JJS",
+  gtmId: "GTM-T2S3NPCD",
 
   contact: {
     phoneDisplay: "+91 78427 66363",
