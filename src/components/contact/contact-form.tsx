@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { siteConfig } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -23,6 +24,7 @@ export function ContactForm() {
     const url = `https://wa.me/${siteConfig.contact.whatsappRaw}?text=${encodeURIComponent(
       lines.join(" ")
     )}`;
+    trackEvent("contact_form_whatsapp_submit");
     window.open(url, "_blank", "noopener,noreferrer");
   }
 
