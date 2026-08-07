@@ -17,9 +17,9 @@ export const siteConfig = {
   googleAdsId: "AW-18366122950",
 
   contact: {
-    phoneDisplay: "+91 78427 66363",
-    phoneRaw: "+917842766363",
-    whatsappRaw: "917842766363",
+    phoneDisplay: "+91 99484 81838",
+    phoneRaw: "+919948481838",
+    whatsappRaw: "919948481838",
     email: "anantaraspa2025@gmail.com",
   },
 
