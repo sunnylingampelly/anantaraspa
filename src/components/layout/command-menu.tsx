@@ -12,6 +12,7 @@ import {
   HelpCircle,
   Phone,
   Newspaper,
+  MapPin,
 } from "lucide-react";
 
 import {
@@ -26,6 +27,7 @@ import {
 } from "@/components/ui/command";
 import { services } from "@/content/services";
 import { blogPosts } from "@/content/blog";
+import { areas } from "@/content/areas";
 import { telLink, whatsappLink } from "@/lib/links";
 import { reportCallConversion, reportWhatsAppConversion } from "@/lib/analytics";
 import { WhatsAppIcon } from "@/components/ui-custom/brand-icons";
@@ -109,6 +111,14 @@ export function CommandMenuProvider({ children }: { children: React.ReactNode })
             {services.slice(0, 8).map((s) => (
               <CommandItem key={s.slug} onSelect={() => go(`/services/${s.slug}`)}>
                 <Sparkles /> {s.name}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Areas We Serve">
+            {areas.map((a) => (
+              <CommandItem key={a.slug} onSelect={() => go(`/spa-near/${a.slug}`)}>
+                <MapPin /> Spa Near {a.name}
               </CommandItem>
             ))}
           </CommandGroup>
