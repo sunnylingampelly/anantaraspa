@@ -84,6 +84,7 @@ export const FOOTER_LINKS = {
     { label: "Membership", href: "/membership" },
     { label: "Gallery", href: "/gallery" },
     { label: "Journal", href: "/blog" },
+    { label: "Areas We Serve", href: "/spa-near" },
   ],
   support: [
     { label: "FAQs", href: "/faqs" },

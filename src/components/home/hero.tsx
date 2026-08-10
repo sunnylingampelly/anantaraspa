@@ -84,8 +84,8 @@ export function Hero() {
           Anantara Spa &middot; Gachibowli, Hyderabad
         </motion.span>
 
-        <h1 className="mt-5 max-w-3xl font-heading text-6xl sm:text-7xl lg:text-8xl font-medium leading-[1.02] text-cream">
-          {["Relax.", "Rejuvenate.", "Rediscover Yourself."].map((line, i) => (
+        <h1 className="mt-5 max-w-3xl font-heading text-5xl sm:text-6xl lg:text-7xl font-medium leading-[1.05] text-cream">
+          {["Luxury Spa in Gachibowli.", "Relax, Rejuvenate,", "Rediscover Yourself."].map((line, i) => (
             <motion.span
               key={line}
               initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}

@@ -6,6 +6,7 @@ import { InstagramIcon, FacebookIcon } from "@/components/ui-custom/brand-icons"
 import { siteConfig, FOOTER_LINKS } from "@/lib/site-config";
 import { mailtoLink } from "@/lib/links";
 import { CallLink } from "@/components/ui-custom/call-link";
+import { areas } from "@/content/areas";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -112,7 +113,25 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-cream/20 pt-8 text-xs text-cream/80 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-cream/20 pt-8">
+          <h3 className="font-accent text-xs uppercase tracking-[0.2em] text-sage">
+            Also Serving
+          </h3>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            {areas.map((area) => (
+              <li key={area.slug}>
+                <Link
+                  href={`/spa-near/${area.slug}`}
+                  className="text-sm text-cream/85 transition-colors hover:text-cream"
+                >
+                  Spa Near {area.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-cream/20 pt-8 text-xs text-cream/80 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {siteConfig.name}. All rights reserved.
           </p>
