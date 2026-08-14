@@ -34,7 +34,7 @@ export function reportCallConversion(url: string) {
   });
 }
 
-const WHATSAPP_CONVERSION_LABEL = "AW-18366122950/IOBYCNzT7dscEMaX07VE";
+const WHATSAPP_CONVERSION_LABEL = "AW-18366122950/g0YZCIfU0OEcEMaX07VE";
 
 /**
  * Google Ads "WhatsApp booking" conversion snippet. No navigation
