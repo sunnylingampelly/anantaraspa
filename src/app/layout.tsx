@@ -135,7 +135,10 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${siteConfig.googleAdsId}');`}
+          gtag('config', '${siteConfig.googleAdsId}');
+          gtag('config', 'AW-18366122950/GvjwCP7t0-EcEMaX07VE', {
+            'phone_conversion_number': '9948481838'
+          });`}
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
