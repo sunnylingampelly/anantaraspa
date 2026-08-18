@@ -15,6 +15,7 @@ export const siteConfig = {
   themeColor: "#2e5e57",
   gtmId: "GTM-T2S3NPCD",
   googleAdsId: "AW-18366122950",
+  ga4Id: "G-GYH3TLEKNM",
 
   contact: {
     phoneDisplay: "+91 99484 81838",

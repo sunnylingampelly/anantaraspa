@@ -46,7 +46,7 @@ export function Hero() {
         <picture>
           <source media="(min-width: 640px)" srcSet="/images/gallery/hero-web.webp" />
           <img
-            src="/images/gallery/hero-mobile.webp"
+            src="/images/gallery/mobile-hero.webp"
             alt="Private, candlelit Anantara Spa treatment suite with a garden water feature"
             className="absolute inset-0 h-full w-full object-cover"
             fetchPriority="high"
