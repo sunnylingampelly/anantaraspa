@@ -74,7 +74,7 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="container-luxe relative z-10 pt-24 pb-14 sm:pb-0">
+      <div className="container-luxe relative z-10 flex flex-col items-center pt-24 pb-14 text-center sm:items-start sm:pb-0 sm:text-left">
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,14 +84,27 @@ export function Hero() {
           Anantara Spa &middot; Gachibowli, Hyderabad
         </motion.span>
 
-        <h1 className="mt-5 max-w-3xl font-heading text-5xl sm:text-6xl lg:text-7xl font-medium leading-[1.05] text-cream">
+        <h1 className="mt-5 max-w-3xl font-heading text-4xl sm:text-6xl lg:text-7xl font-medium leading-[1.15] sm:leading-[1.05] text-cream">
+          {/* Mobile: short, punchy, single idea */}
+          <motion.span
+            initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="block text-balance sm:hidden"
+          >
+            Relax. Rejuvenate.
+            <br />
+            Rediscover Yourself.
+          </motion.span>
+
+          {/* Desktop: full staged headline */}
           {["Luxury Spa in Gachibowli.", "Relax, Rejuvenate,", "Rediscover Yourself."].map((line, i) => (
             <motion.span
               key={line}
               initial={{ opacity: 0, y: 24, filter: "blur(10px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 1, delay: 0.3 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
-              className="block text-balance"
+              className="hidden text-balance sm:block"
             >
               {line}
             </motion.span>
@@ -102,23 +115,26 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
-          className="mt-6 max-w-md text-balance text-base sm:text-lg text-cream/80"
+          className="mt-4 max-w-xs text-balance text-sm text-cream/80 sm:mt-6 sm:max-w-md sm:text-base sm:text-lg"
         >
-          A private sanctuary in the heart of Gachibowli, where time-tested therapies
-          meet unhurried, modern calm — minutes from HITEC City and the Financial District.
+          <span className="sm:hidden">Your private escape in Gachibowli.</span>
+          <span className="hidden sm:inline">
+            A private sanctuary in the heart of Gachibowli, where time-tested therapies
+            meet unhurried, modern calm — minutes from HITEC City and the Financial District.
+          </span>
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.05 }}
-          className="mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4"
+          className="mt-8 flex w-full flex-col items-center gap-3 sm:mt-9 sm:w-auto sm:flex-row sm:gap-4"
         >
-          <WhatsAppLink className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-ink transition-transform hover:scale-[1.03] active:scale-95">
+          <WhatsAppLink className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 font-accent text-sm uppercase tracking-[0.14em] text-ink shadow-lg shadow-gold/20 transition-transform hover:scale-[1.03] active:scale-95 sm:w-auto sm:max-w-none sm:py-3.5">
             <WhatsAppIcon className="size-4" />
             Book Appointment
           </WhatsAppLink>
-          <CallLink className="inline-flex items-center justify-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs sm:text-sm uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10">
+          <CallLink className="inline-flex w-full max-w-xs items-center justify-center gap-2 rounded-full border border-cream/40 px-7 py-3.5 font-accent text-xs uppercase tracking-[0.14em] text-cream transition-colors hover:border-cream hover:bg-cream/10 sm:w-auto sm:max-w-none sm:text-sm">
             <Phone className="size-4" strokeWidth={1.75} />
             Call Now
           </CallLink>
